@@ -1,4 +1,4 @@
-const Product = ({ id, title, price, description, category, image }) => {
+const Product = ({ title, price, image }) => {
   return (
     <div className="product-card">
       <div className="product-image">
