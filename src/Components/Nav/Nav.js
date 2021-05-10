@@ -1,12 +1,47 @@
-const Nav = ({ categories, filterPage }) => {
+import React, { useContext } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Slider from "@material-ui/core/Slider";
+import ProductsHandler from "../../contexts/ProductsHandler";
+
+const Nav = ({ categories, filterByCategory, filterByRange }) => {
+  const { minMax } = useContext(ProductsHandler);
+
+  const useStyles = makeStyles({
+    root: {
+      width: 300,
+      marginRight: 70,
+      marginTop: 10,
+    },
+  });
+
+  const classes = useStyles();
+  const [value, setValue] = React.useState([minMax[0], minMax[1]]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    filterByRange(newValue);
+  };
+
   return (
     <nav className="product-filter">
-      <h1>Store</h1>
+      <h1 className="store">Store</h1>
+
+      <div className={classes.root}>
+        <label>range:</label>
+        <Slider
+          min={minMax[0]}
+          max={minMax[1]}
+          value={value}
+          onChange={handleChange}
+          valueLabelDisplay="auto"
+          aria-labelledby="range-slider"
+        />
+      </div>
 
       <div className="sort">
         <div className="collection-sort">
           <label>Filter by:</label>
-          <select onChange={(e) => filterPage(e.target.value)}>
+          <select onChange={(e) => filterByCategory(e.target.value)}>
             <option value="all categories">all categories</option>
             {categories.map((category) => {
               return (

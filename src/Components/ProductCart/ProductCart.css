@@ -1,6 +1,7 @@
-.product-card {
+.product-card-c {
   display: flex;
   flex-direction: column;
+  width: 30%;
 
   padding: 2%;
   flex: 1 16%;
@@ -9,14 +10,17 @@
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
 }
 
-.product-image img {
-  width: 100%;
+.product-image-c img {
+  width: 50%;
+  margin-left: 20%;
 }
 
-.product-info {
+.product-info-c {
+  width: 50%;
   margin-top: auto;
   padding-top: 20px;
   text-align: center;
+  margin-left: 20%;
 }
 
 @media (max-width: 920px) {
@@ -30,7 +34,7 @@
   }
 }
 
-.plus-button {
+.minus-button {
   border: 3px solid lightgrey;
   background-color: #fff;
   font-size: 16px;

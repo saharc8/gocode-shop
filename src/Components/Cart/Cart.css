@@ -1,0 +1,8 @@
+.cart {
+  width: 40%;
+  float: left;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 40px;
+  top: 60px;
+}
