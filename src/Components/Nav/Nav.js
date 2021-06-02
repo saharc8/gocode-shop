@@ -28,14 +28,16 @@ const Nav = ({ categories, filterByCategory, filterByRange }) => {
 
       <div className={classes.root}>
         <label>range:</label>
-        <Slider
-          min={minMax[0]}
-          max={minMax[1]}
-          value={value}
-          onChange={handleChange}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-        />
+        {minMax[0] && (
+          <Slider
+            min={minMax[0]}
+            max={minMax[1]}
+            value={value}
+            onChange={handleChange}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+          />
+        )}
       </div>
 
       <div className="sort">
